@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 const siklabGif = '/images/siklab.gif';
 
 const HEADER_STYLES = `
@@ -10,6 +12,7 @@ const HEADER_STYLES = `
     z-index: 999;
     transition: background 0.3s ease, border-color 0.3s ease;
   }
+
   .header-row {
     display: flex;
     align-items: center;
@@ -17,16 +20,19 @@ const HEADER_STYLES = `
     padding: 0.65rem 0;
     flex-wrap: wrap;
   }
+
   .logo-gif {
     height: 80px;
     display: block;
   }
+
   .nav-tabs {
     display: flex;
     gap: 0.35rem;
     align-items: center;
     flex-wrap: wrap;
   }
+
   .nav-tab {
     padding: 0.4rem 0.85rem;
     border: 2px solid rgba(239,68,68,0.5);
@@ -40,33 +46,30 @@ const HEADER_STYLES = `
     font-size: 0.75rem;
     white-space: nowrap;
   }
-  .nav-tab:hover { background: rgba(220,38,38,0.2); }
+
+  .nav-tab:hover {
+    background: rgba(220,38,38,0.2);
+  }
+
   .nav-tab.active {
     background: #dc2626;
     border-color: #fca5a5;
     color: white;
     box-shadow: 0 0 20px rgba(220,38,38,0.5);
   }
-  
-  .theme-toggle-btn {
-    padding: 0.4rem 0.65rem;
+
+  .menu-toggle {
+    display: none;
+    padding: 0.35rem 0.65rem;
     border: 2px solid rgba(255,255,255,0.3);
     background: rgba(255,255,255,0.1);
     color: white;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     cursor: pointer;
-    transition: all 0.2s;
     line-height: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 38px;
-  }
-  .theme-toggle-btn:hover {
-    background: rgba(255,255,255,0.2);
-    transform: scale(1.05);
   }
 
+  .theme-toggle-btn,
   .mute-btn {
     padding: 0.4rem 0.65rem;
     border: 2px solid rgba(255,255,255,0.3);
@@ -81,16 +84,23 @@ const HEADER_STYLES = `
     justify-content: center;
     min-width: 38px;
   }
-  .mute-btn:hover {
+
+  .theme-toggle-btn:hover,
+  .mute-btn:hover,
+  .menu-toggle:hover {
     background: rgba(255,255,255,0.2);
     transform: scale(1.05);
   }
+
   .mute-btn.muted {
     border-color: rgba(239,68,68,0.6);
     background: rgba(239,68,68,0.15);
   }
-  
-  .header-spacer { flex: 1; }
+
+  .header-spacer {
+    flex: 1;
+  }
+
   .max-info { 
     color: var(--accent-cyan); 
     font-size: 0.75rem; 
@@ -98,8 +108,58 @@ const HEADER_STYLES = `
     white-space: nowrap; 
     transition: color 0.3s ease;
   }
-  @media (max-width: 768px) { .nav-tab { font-size: 0.68rem; padding: 0.35rem 0.6rem; } }
-  @media (max-width: 480px) { .logo-text { font-size: 1.1rem; } .nav-tab { padding: 0.35rem 0.55rem; font-size: 0.62rem; } }
+
+  @media (max-width: 768px) {
+    .header {
+      border-bottom-width: 2px;
+    }
+
+    .header-row {
+      padding: 6px 0;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .logo-gif {
+      height: 42px;
+    }
+
+    .menu-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 34px;
+      height: 34px;
+    }
+
+    .nav-tabs {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      gap: 6px;
+      order: 10;
+      margin-top: 6px;
+    }
+
+    .nav-tabs.open {
+      display: flex;
+    }
+
+    .nav-tab {
+      width: 100%;
+      text-align: left;
+      font-size: 0.68rem;
+      padding: 0.55rem 0.7rem;
+    }
+
+    .theme-toggle-btn,
+    .mute-btn {
+      min-width: 34px;
+      height: 34px;
+      padding: 0;
+      font-size: 0.9rem;
+    }
+  }
 `;
 
 const NAV_ITEMS = [
@@ -111,11 +171,21 @@ const NAV_ITEMS = [
 ];
 
 export default function Header({
-  activeSection, scrollToSection,
+  activeSection,
+  scrollToSection,
   userCount,
-  lightMode, toggleTheme,
-  muted, toggleMute,
+  lightMode,
+  toggleTheme,
+  muted,
+  toggleMute,
 }) {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleNavClick = (key) => {
+    scrollToSection(key);
+    setMenuOpen(false);
+  };
+
   return (
     <>
       <style>{HEADER_STYLES}</style>
@@ -126,20 +196,22 @@ export default function Header({
             <div className="logo">
               <img src={siklabGif} alt="SIKLAB Logo" className="logo-gif" />
             </div>
-            <div className="nav-tabs">
-              {NAV_ITEMS.map(({ key, label }) => (
-                <button key={key} className={`nav-tab ${activeSection === key ? 'active' : ''}`} onClick={() => scrollToSection(key)}>
-                  {label}
-                </button>
-              ))}
-            </div>
+
             <div className="header-spacer" />
+
+            <button
+              className="menu-toggle"
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="Toggle menu"
+            >
+              ☰
+            </button>
 
             <button
               className="theme-toggle-btn"
               onClick={toggleTheme}
               aria-label="Toggle theme"
-              title={lightMode ? "Switch to dark mode" : "Switch to light mode"}
+              title={lightMode ? 'Switch to dark mode' : 'Switch to light mode'}
             >
               {lightMode ? '🌙' : '☀️'}
             </button>
@@ -147,11 +219,23 @@ export default function Header({
             <button
               className={`mute-btn${muted ? ' muted' : ''}`}
               onClick={toggleMute}
-              aria-label={muted ? "Unmute music" : "Mute music"}
-              title={muted ? "Unmute music" : "Mute music"}
+              aria-label={muted ? 'Unmute music' : 'Mute music'}
+              title={muted ? 'Unmute music' : 'Mute music'}
             >
               {muted ? '🔇' : '🔊'}
             </button>
+
+            <div className={`nav-tabs ${menuOpen ? 'open' : ''}`}>
+              {NAV_ITEMS.map(({ key, label }) => (
+                <button
+                  key={key}
+                  className={`nav-tab ${activeSection === key ? 'active' : ''}`}
+                  onClick={() => handleNavClick(key)}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </header>
