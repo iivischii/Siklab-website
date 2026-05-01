@@ -1,10 +1,68 @@
 @media (max-width: 768px) {
-  /* Arcade video */
+  /* Header */
+  .header .container {
+    padding: 0 12px !important;
+  }
+
+  .header-row {
+    padding: 14px 0 !important;
+    gap: 8px !important;
+  }
+
+  .logo-gif {
+    height: 58px !important;
+  }
+
+  .nav-tabs {
+    width: 100% !important;
+    gap: 6px !important;
+  }
+
+  .nav-tab {
+    font-size: 10px !important;
+    padding: 8px 10px !important;
+    letter-spacing: 0.04em !important;
+  }
+
+  .theme-toggle-btn,
+  .mute-btn {
+    min-width: 42px !important;
+    height: 42px !important;
+    padding: 0 !important;
+  }
+
+  /* Home / Arcade section */
+  .hero-section,
+  .home-section,
+  .arcade-section {
+    min-height: calc(100vh - 150px) !important;
+    height: auto !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+
+    display: flex !important;
+    align-items: flex-end !important;
+    justify-content: center !important;
+  }
+
+  .arcade-machine,
+  .arcade-container,
+  .arcade-wrapper {
+    width: 92vw !important;
+    max-width: 430px !important;
+    margin: 0 auto !important;
+    transform: translateY(0) !important;
+  }
+
   .arcade-screen-video {
-    width: 40% !important;
-    top: 45% !important;
-    max-height: 70% !important;
-    border-radius: 4px !important;
+    width: 58% !important;
+    max-height: none !important;
+    height: auto !important;
+    top: 42% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    object-fit: cover !important;
+    border-radius: 6px !important;
   }
 
   /* Mechanics */
@@ -45,13 +103,30 @@
 }
 
 @media (max-width: 400px) {
-  .arcade-screen-video {
-    width: 36% !important;
-    top: 35% !important;
-    max-height: 28% !important;
+  .logo-gif {
+    height: 52px !important;
   }
 
-  .mechanics-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
+  .nav-tab {
+    font-size: 9px !important;
+    padding: 7px 8px !important;
+  }
+
+  .hero-section,
+  .home-section,
+  .arcade-section {
+    min-height: calc(100vh - 145px) !important;
+  }
+
+  .arcade-machine,
+  .arcade-container,
+  .arcade-wrapper {
+    width: 96vw !important;
+  }
+
+  .arcade-screen-video {
+    width: 62% !important;
+    top: 43% !important;
+    max-height: none !important;
   }
 }
