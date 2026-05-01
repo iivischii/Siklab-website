@@ -148,7 +148,7 @@ const DownloadSection = forwardRef(function DownloadSection(_props, ref) {
 
           <div className="download-card">
             <video className="download-video" autoPlay loop muted playsInline>
-              <source src="/src/assets/images/TRAILER.mp4" type="video/mp4" />
+              <source src="/images/TRAILER.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
