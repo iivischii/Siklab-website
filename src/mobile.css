@@ -1,15 +1,57 @@
 @media (max-width: 768px) {
+  /* Arcade video */
   .arcade-screen-video {
-    width: 44% !important;
-    top: 33% !important;
-    max-height: 38% !important;
+    width: 40% !important;
+    top: 45% !important;
+    max-height: 30% !important;
+    border-radius: 4px !important;
+  }
+
+  /* Mechanics */
+  .mechanics-section {
+    padding: 40px 16px !important;
+  }
+
+  .mechanics-container {
+    grid-template-columns: 1fr !important;
+  }
+
+  .mechanics-right-panel {
+    order: -1 !important;
+    height: auto !important;
+    min-height: 300px !important;
+  }
+
+  .mechanics-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  .detail-title {
+    font-size: 20px !important;
+  }
+
+  .detail-description {
+    font-size: 14px !important;
+  }
+
+  .intro-title {
+    font-size: 24px !important;
+  }
+
+  .intro-text {
+    font-size: 14px !important;
   }
 }
 
 @media (max-width: 400px) {
   .arcade-screen-video {
-    width: 44% !important;
-    top: 33% !important;
-    max-height: 36% !important;
+    width: 36% !important;
+    top: 35% !important;
+    max-height: 28% !important;
+  }
+
+  .mechanics-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 }
