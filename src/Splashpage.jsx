@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import pspImage from "./assets/images/psp.png";
 import glitchSfx from "./assets/sounds/Glitch.mp3";
 
-function SplashPage() {
+function Splashpage() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(0);
   const [showLoading, setShowLoading] = useState(false);
@@ -609,4 +609,4 @@ function SplashPage() {
   );
 }
 
-export default SplashPage;
+export default Splashpage;

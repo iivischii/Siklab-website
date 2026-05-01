@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import './App.css';
-import SplashPage from './SplashPage';
+import Splashpage from './Splashpage';
 import RetroSite from './RetroSite';
 
 function App() {
@@ -31,7 +31,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<SplashPage />} />
+        <Route path="/" element={<Splashpage />} />
         <Route path="/retro" element={<RetroSite lightMode={lightMode} toggleTheme={toggleTheme} />} />
       </Routes>
     </Router>
