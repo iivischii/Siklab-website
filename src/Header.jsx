@@ -101,14 +101,6 @@ const HEADER_STYLES = `
     flex: 1;
   }
 
-  .max-info { 
-    color: var(--accent-cyan); 
-    font-size: 0.75rem; 
-    flex-shrink: 0; 
-    white-space: nowrap; 
-    transition: color 0.3s ease;
-  }
-
   @media (max-width: 768px) {
     .header {
       border-bottom-width: 2px;
@@ -117,7 +109,6 @@ const HEADER_STYLES = `
     .header-row {
       padding: 6px 0;
       gap: 6px;
-      flex-wrap: wrap;
     }
 
     .logo-gif {
@@ -173,7 +164,6 @@ const NAV_ITEMS = [
 export default function Header({
   activeSection,
   scrollToSection,
-  userCount,
   lightMode,
   toggleTheme,
   muted,
@@ -197,8 +187,6 @@ export default function Header({
               <img src={siklabGif} alt="SIKLAB Logo" className="logo-gif" />
             </div>
 
-            <div className="header-spacer" />
-
             <button
               className="menu-toggle"
               onClick={() => setMenuOpen(!menuOpen)}
@@ -206,6 +194,20 @@ export default function Header({
             >
               ☰
             </button>
+
+            <div className={`nav-tabs ${menuOpen ? 'open' : ''}`}>
+              {NAV_ITEMS.map(({ key, label }) => (
+                <button
+                  key={key}
+                  className={`nav-tab ${activeSection === key ? 'active' : ''}`}
+                  onClick={() => handleNavClick(key)}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+
+            <div className="header-spacer" />
 
             <button
               className="theme-toggle-btn"
@@ -224,18 +226,6 @@ export default function Header({
             >
               {muted ? '🔇' : '🔊'}
             </button>
-
-            <div className={`nav-tabs ${menuOpen ? 'open' : ''}`}>
-              {NAV_ITEMS.map(({ key, label }) => (
-                <button
-                  key={key}
-                  className={`nav-tab ${activeSection === key ? 'active' : ''}`}
-                  onClick={() => handleNavClick(key)}
-                >
-                  {label}
-                </button>
-              ))}
-            </div>
           </div>
         </div>
       </header>
