@@ -1,4 +1,4 @@
-import siklabGif from "./assets/images/siklab.gif";
+const siklabGif = '/images/siklab.gif';
 
 const HEADER_STYLES = `
   .header {
