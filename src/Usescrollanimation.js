@@ -5,11 +5,19 @@ export const useScrollAnimation = (options = {}) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    const isMobile = window.innerWidth <= 768;
+
+    // Disable animation on mobile
+    if (isMobile) {
+      setIsVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          // Optionally unobserve after animation triggers once
+
           if (options.once !== false) {
             observer.unobserve(entry.target);
           }
@@ -24,6 +32,7 @@ export const useScrollAnimation = (options = {}) => {
     );
 
     const currentElement = elementRef.current;
+
     if (currentElement) {
       observer.observe(currentElement);
     }
