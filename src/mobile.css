@@ -1,0 +1,305 @@
+/* ============================================
+   SIKLAB MOBILE CSS
+   Drop this in src/ and import in main.jsx:
+   import './mobile.css'
+   ============================================ */
+
+@media (max-width: 768px) {
+
+  /* ---- GENERAL ---- */
+  .section-full {
+    padding: 40px 20px !important;
+  }
+
+  /* ---- HEADER / NAV ---- */
+  header, .header, nav {
+    padding: 10px 16px !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+
+  .nav-links, .header-nav {
+    gap: 6px !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
+
+  .nav-links a, .nav-links button,
+  .header-nav a, .header-nav button {
+    font-size: 11px !important;
+    padding: 6px 10px !important;
+  }
+
+  .header-logo, .logo {
+    width: 100px !important;
+    height: auto !important;
+  }
+
+  /* ---- HERO / ARCADE ---- */
+  .hero {
+    min-height: 55vh !important;
+    padding: 0 !important;
+  }
+
+  .hero-content {
+    width: 100% !important;
+    padding: 0 10px !important;
+  }
+
+  .arcade-container {
+    width: 100% !important;
+  }
+
+  .arcade-img {
+    width: 100% !important;
+    min-width: unset !important;
+    max-width: 100% !important;
+  }
+
+  .arcade-screen-video {
+    width: 41% !important;
+    top: 17% !important;
+    border-radius: 6px !important;
+  }
+
+  /* ---- SPLASHPAGE / PSP ---- */
+  .splash-container, .splash-page {
+    padding: 20px !important;
+  }
+
+  .psp-image, .splash-image {
+    width: 85vw !important;
+    max-width: 340px !important;
+    height: auto !important;
+  }
+
+  /* ---- MAIN CONTENT (Story section) ---- */
+  .main-content {
+    padding: 2rem 1rem !important;
+  }
+
+  .main-title {
+    font-size: 1.8rem !important;
+  }
+
+  .main-description {
+    font-size: 0.9rem !important;
+  }
+
+  .room-sections-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  .room-title {
+    font-size: 1.3rem !important;
+  }
+
+  .bottom-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ---- SCENERY CAROUSEL ---- */
+  .scenery-section {
+    padding: 40px 16px !important;
+  }
+
+  .scenery-title {
+    font-size: 28px !important;
+  }
+
+  .scenery-card {
+    flex: 0 0 220px !important;
+  }
+
+  .scenery-card-glass {
+    height: 320px !important;
+  }
+
+  .scenery-image {
+    height: 220px !important;
+  }
+
+  .scenery-pill {
+    font-size: 14px !important;
+    padding: 8px 16px !important;
+  }
+
+  /* ---- MECHANICS SECTION ---- */
+  .mechanics-section, .MechanicsSection {
+    padding: 40px 16px !important;
+  }
+
+  /* Fix the huge monospace text in mechanics */
+  .feature-card, .mechanic-card {
+    padding: 1rem !important;
+  }
+
+  .feature-title, .mechanic-title {
+    font-size: 1.2rem !important;
+  }
+
+  .feature-description, .mechanic-description {
+    font-size: 0.85rem !important;
+    line-height: 1.5 !important;
+  }
+
+  /* ---- DOWNLOAD SECTION ---- */
+  .download-section {
+    padding: 40px 16px !important;
+  }
+
+  .download-inner {
+    flex-direction: column !important;
+    gap: 20px !important;
+    align-items: center !important;
+  }
+
+  .download-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: none !important;
+  }
+
+  .download-buttons {
+    width: 100% !important;
+    flex: none !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .download-heading {
+    font-size: 22px !important;
+  }
+
+  .download-btn-group {
+    width: 100% !important;
+  }
+
+  /* ---- CHARACTER POPUP ---- */
+  .character-popup-container {
+    height: 98vh !important;
+    border-radius: 8px !important;
+  }
+
+  .character-popup-body {
+    grid-template-columns: 1fr !important;
+    overflow-y: auto !important;
+  }
+
+  .character-display-panel {
+    order: 1 !important;
+    min-height: 280px !important;
+    max-height: 320px !important;
+  }
+
+  .character-grid-panel {
+    order: 2 !important;
+    border-right: none !important;
+    border-top: 2px solid #e94560 !important;
+    max-height: 280px !important;
+  }
+
+  .character-details-panel {
+    order: 3 !important;
+    border-left: none !important;
+    border-top: 2px solid #e94560 !important;
+  }
+
+  .character-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  .character-grid.others {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  .character-name-text {
+    font-size: 1.1rem !important;
+  }
+
+  /* ---- MAP POPUP ---- */
+  .map-popup-container {
+    max-width: 100% !important;
+    height: 95vh !important;
+    border-radius: 8px !important;
+  }
+
+  .map-footer-image-container {
+    height: 45vh !important;
+  }
+
+  /* ---- GENERIC POPUP (AR, Papers, Collectibles) ---- */
+  .generic-popup-container {
+    border-radius: 20px !important;
+    max-height: 90vh !important;
+  }
+
+  .generic-popup-content {
+    grid-template-columns: 1fr !important;
+    padding: 1.5rem 1rem !important;
+    gap: 1.5rem !important;
+  }
+
+  .generic-popup-title {
+    font-size: 1.8rem !important;
+  }
+
+  .generic-right-section {
+    min-height: 250px !important;
+  }
+
+  /* ---- FOOTER ---- */
+  footer, .footer {
+    padding: 30px 16px !important;
+    text-align: center !important;
+  }
+
+  .footer-inner, .footer-content {
+    flex-direction: column !important;
+    gap: 16px !important;
+    align-items: center !important;
+  }
+
+  /* ---- FEEDBACK SECTION ---- */
+  .feedback-section {
+    padding: 40px 16px !important;
+  }
+
+  .feedback-form, form {
+    width: 100% !important;
+  }
+
+  /* ---- RETRO SITE ---- */
+  .retro-site {
+    padding: 20px 16px !important;
+  }
+
+  /* ---- SCROLLBAR HIDE ON MOBILE ---- */
+  * {
+    scrollbar-width: none !important;
+  }
+  *::-webkit-scrollbar {
+    display: none !important;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 400px) {
+  .arcade-screen-video {
+    width: 40% !important;
+    top: 16% !important;
+  }
+
+  .scenery-card {
+    flex: 0 0 200px !important;
+  }
+
+  .character-display-panel {
+    min-height: 240px !important;
+  }
+
+  .generic-popup-title {
+    font-size: 1.5rem !important;
+  }
+}
