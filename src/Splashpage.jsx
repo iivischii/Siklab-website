@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import pspImage from "./assets/images/psp.png";
+const pspImage = '/images/psp.png';
 import glitchSfx from "./assets/sounds/Glitch.mp3";
 
 function Splashpage() {

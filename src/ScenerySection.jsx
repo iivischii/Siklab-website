@@ -104,11 +104,11 @@ const SCENERY_STYLES = `
 `;
 
 const SCENERY_DATA = [
-  { id: 1, name: 'Gomburza Monument', image: '/src/assets/images/gomburza.png' },
-  { id: 2, name: 'Intramuros', image: '/src/assets/images/intramuros.png' },
-  { id: 3, name: 'Malacañang Palace', image: '/src/assets/images/malacanang.png' },
-  { id: 4, name: 'NAIA Terminal', image: '/src/assets/images/naia.png' },
-  { id: 5, name: 'National Museum', image: '/src/assets/images/nationalmuseum.png' }
+  { id: 1, name: 'Gomburza Monument', image: '/images/gomburza.png' },
+  { id: 2, name: 'Intramuros',        image: '/images/intramuros.png' },
+  { id: 3, name: 'Malacañang Palace', image: '/images/malacanang.png' },
+  { id: 4, name: 'NAIA Terminal',     image: '/images/naia.png' },
+  { id: 5, name: 'National Museum',   image: '/images/nationalmuseum.png' },
 ];
 
 export default function ScenerySection() {

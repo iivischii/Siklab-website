@@ -1,11 +1,12 @@
 import { forwardRef } from 'react';
 import { useScrollAnimation } from './Usescrollanimation';
-import topdownImg from './assets/images/49.jpg';
-import adventureImg from './assets/images/5.jpg';
-import storyImg from './assets/images/61.png';
-import polyImg from './assets/images/boy1.png';
-import arImg from './assets/images/ar.jpg';
-import mobImg from './assets/images/mobile.png';
+
+const topdownImg = '/images/49.jpg';
+const adventureImg = '/images/5.jpg';
+const storyImg = '/images/61.png';
+const polyImg = '/images/boy1.png';
+const arImg = '/images/ar.jpg';
+const mobImg = '/images/mobile.png';
 
 const MECHANICS_STYLES = `
   @keyframes mechPopUp { 

@@ -160,7 +160,7 @@ const DownloadSection = forwardRef(function DownloadSection(_props, ref) {
 
               <div className="download-btn-wrap">
                 <button className="download-btn" disabled>
-                  <img src="/src/assets/images/girl.png" alt="APK" className="download-img" />
+                  <img src="/images/girl.png" alt="APK" className="download-img" />
                   <div>
                     <div className="download-btn-label">Download on</div>
                     <div className="download-btn-store">APK File</div>
@@ -171,7 +171,7 @@ const DownloadSection = forwardRef(function DownloadSection(_props, ref) {
 
               <div className="download-btn-wrap">
                 <button className="download-btn" disabled>
-                  <img src="/src/assets/images/boy.png" alt="itch.io" className="download-img" />
+                  <img src="/images/boy.png" alt="APK" className="download-img" />
                   <div>
                     <div className="download-btn-label">Play the preview on</div>
                     <div className="download-btn-store">itch.io</div>

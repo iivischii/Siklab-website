@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import ishImg from './assets/images/isa.png';
-import junImg from './assets/images/junjun.png';
-import kyImg from './assets/images/liyah.png';
-import melImg from './assets/images/melody.png';
-import xanImg from './assets/images/xandy.png';
+const ishImg = '/images/isa.png';
+const junImg = '/images/junjun.png';
+const kyImg = '/images/liyah.png';
+const melImg = '/images/melody.png';
+const xanImg = '/images/xandy.png';
 
 
 const FOOTER_STYLES = `
